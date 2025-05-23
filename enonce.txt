@@ -1,0 +1,77 @@
+
+//Exercice 1
+public class Calculatrice {
+    String marque;
+    public float add(float operande1, float operande2){
+        return operande1 + operande2;
+    }
+    public float div(float numerateur, float denominateur) {
+        if(denominateur == 0){
+            throw new ArithmeticException("Div par O");
+        }
+        return numerateur / denominateur;
+    }
+    public float mult(float operande1, float operande2){
+        return operande1 * operande2;
+    }
+}
+
+//1:
+import org.junit.jupiter.api.Test;
+
+public class TestCalculatrice
+{
+    private Calculatrice calculatrice;
+
+    @BeforeAll
+    public void setup()
+    {
+        calculatrice = new Calculatrice();
+    }
+
+    @Test
+    public void testAdition()
+    {
+        assertEquals(calculatrice.add(5,5), 10);
+        assertEquals(calculatrice.add(-3,10), 7);
+    }
+
+    @Test
+    public void testDivision()
+    {
+        assertEquals(calculatrice.add(10, 2), 5);
+    }
+
+    @Test
+    public void testMultiplication()
+    {
+        assertEquals(calculatrice.mult(10, 2), 20);
+    }
+}
+
+//2 :
+// Dans la classe TestCalculatrice (aproche TDD)
+@Test
+public void testMinus()
+{
+    assertEquals(calculatrice.minus(10,5), 5);
+    assertEquals(calculatrice.minus(0,10), -10);
+}
+
+// Dans la classe Calculatrice:
+public float minus(float a, float b)
+{
+    return a - b;
+}
+
+
+
+
+// Exerice 3 : 
+
+On voit que la couverture est de 83%, le test a covered plus de 83 des lignes de codes et 17% des lignes d ecodes n'ont pas été executé.
+la ligne qui n'est pas executé est celle dans div avec le throw division par 0, donc dans le test, il n'ya pas de test pour vérifier la division par 0.
+
+Pour améliorer le test, il faudrai ajouter un test avec mokito et tester la méthode div de calculatrice avec comme dénominateur 0f. Pour voir 100% dans le test
+de couverture.
+
