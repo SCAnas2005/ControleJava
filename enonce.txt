@@ -70,8 +70,8 @@ public float minus(float a, float b)
 // Exerice 3 : 
 
 On voit que la couverture est de 83%, le test a covered plus de 83 des lignes de codes et 17% des lignes d ecodes n'ont pas été executé.
-la ligne qui n'est pas executé est celle dans div avec le throw division par 0, donc dans le test, il n'ya pas de test pour vérifier la division par 0.
+la ligne qui n'est pas executé est celle dans mult, donc dans le test, il n'ya pas de test pour vérifier la multiplication.
 
-Pour améliorer le test, il faudrai ajouter un test avec mokito et tester la méthode div de calculatrice avec comme dénominateur 0f. Pour voir 100% dans le test
+Pour améliorer le test, il faudrai ajouter un test avec mokito et tester la méthode mult de calculatrice. Pour voir 100% dans le test
 de couverture.
 
